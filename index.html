@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নারী সহায়তা কেন্দ্র</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #e63946;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        section {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #e63946;
+            font-size: 28px;
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea, form button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        form input[type="file"] {
+            padding: 5px;
+        }
+
+        form button {
+            background: #e63946;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        form button:hover {
+            background: #b82833;
+        }
+
+        /* Chat Window */
+        #chatWindow {
+            margin-top: 20px;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #messages {
+            margin-bottom: 10px;
+        }
+
+        #chatInput {
+            width: 80%;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        #sendButton {
+            padding: 8px 15px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #sendButton:hover {
+            background-color: #b82833;
+        }
+
+        /* Helpline Section */
+        #helpline ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        #helpline ul li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        #helpline ul li strong {
+            color: #e63946;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>নারী সহায়তা কেন্দ্র</h1>
+        <p>যেকোনো সমস্যায় আমরা আছি আপনার পাশে।</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#report">অভিযোগ জানান</a></li>
+            <li><a href="#helpline">হেল্পলাইন নম্বর</a></li>
+            <li><a href="#advice">পরামর্শ</a></li>
+            <li><a href="#track">অভিযোগ ট্র্যাক করুন</a></li>
+            <li><a href="#contact">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <!-- অভিযোগ জানানোর সেকশন -->
+    <section id="report">
+        <h2>অভিযোগ জানান</h2>
+        <form id="complaintForm">
+            <label for="name">আপনার নাম:</label>
+            <input type="text" id="name" placeholder="আপনার নাম লিখুন" required>
+
+            <label for="email">ইমেইল:</label>
+            <input type="email" id="email" placeholder="আপনার ইমেইল লিখুন" required>
+
+            <label for="complaint">সমস্যার বিবরণ:</label>
+            <textarea id="complaint" placeholder="আপনার সমস্যার কথা লিখুন..." required></textarea>
+
+            <label for="fileUpload">প্রমাণ আপলোড করুন (যদি থাকে):</label>
+            <input type="file" id="fileUpload" accept=".jpg,.png,.pdf">
+
+            <button type="submit">জমা দিন</button>
+        </form>
+    </section>
+
+    <!-- লাইভ চ্যাট সেকশন -->
+    <section id="liveChat">
+        <h2>লাইভ চ্যাট</h2>
+        <p>তৎক্ষণাৎ সাহায্যের জন্য আমাদের সাথে চ্যাট করুন।</p>
+        <button id="chatButton">চ্যাট শুরু করুন</button>
+        <div id="chatWindow" style="display:none;">
+            <div id="messages"></div>
+            <input type="text" id="chatInput" placeholder="আপনার মেসেজ লিখুন...">
+            <button id="sendButton">পাঠান</button>
+        </div>
+    </section>
+
+    <!-- হেল্পলাইন নম্বর -->
+    <section id="helpline">
+        <h2>হেল্পলাইন নম্বর</h2>
+        <ul>
+            <li>জাতীয় হেল্পলাইন: <strong>109</strong></li>
+            <li>নারী নির্যাতন প্রতিরোধ: <strong>181</strong></li>
+            <li>আইনি সহায়তা: <strong>123456789</strong></li>
+            <li>মহিলা ও শিশু বিষয়ক মন্ত্রণালয়: <strong>102</strong></li>
+        </ul>
+    </section>
+
+    <!-- অভিযোগ ট্র্যাক করার সেকশন -->
+    <section id="track">
+        <h2>অভিযোগ ট্র্যাক করুন</h2>
+        <form id="trackForm">
+            <label for="trackingID">আপনার ট্র্যাকিং আইডি লিখুন:</label>
+            <input type="text" id="trackingID" placeholder="ট্র্যাকিং আইডি দিন" required>
+            <button type="submit">ট্র্যাক করুন</button>
+        </form>
+        <div id="trackingStatus" style="display:none;">
+            <p>আপনার অভিযোগের অবস্থা: <strong id="status"></strong></p>
+        </div>
+    </section>
+
+    <!-- পরামর্শ -->
+    <section id="advice">
+        <h2>পরামর্শ</h2>
+        <p>নারী সুরক্ষার জন্য গুরুত্বপূর্ণ টিপস এবং আইনি সহায়তার তথ্য:</p>
+        <ul>
+            <li>কোনো সমস্যার শিকার হলে তৎক্ষণাৎ আইন প্রয়োগকারী সংস্থার সাথে যোগাযোগ করুন।</li>
+            <li>স্ক্রিনশট বা অন্য প্রমাণ সংগ্রহ করুন।</li>
+            <li>বিশ্বস্ত ব্যক্তির সাথে আলোচনা করুন।</li>
+        </ul>
+    </section>
+
+    <!-- যোগাযোগ -->
+    <section id="contact">
+        <h2>যোগাযোগ</h2>
+        <p>আমাদের যেকোনো প্রশ্ন বা সহায়তার জন্য ইমেইল করুন:</p>
+        <p><strong>Email:</strong> support@helpcenter.com</p>
+        <p>বা সরাসরি কল করুন: <strong>123-456-7890</strong></p>
+    </section>
+
+    <footer>
+        <p>© 2024 নারী সহায়তা কেন্দ্র | আপনার তথ্য সম্পূর্ণ নিরাপদ।</p>
+    </footer>
+
+    <script>
+        // অভিযোগ ফর্ম জমা
+        document.getElementById("complaintForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            alert("আপনার অভিযোগ জমা দেওয়া হয়েছে। আমরা দ্রুত আপনার সাথে যোগাযোগ করব।");
+        });
+
+        // লাইভ চ্যাট ফাংশন
+        document.getElementById("chatButton").addEventListener("click", function () {
+            document.getElementById("chatWindow").style.display = "block";
+        });
+
+        // মেসেজ পাঠানো
+        document.getElementById("sendButton").addEventListener("click", function () {
+            let message = document.getElementById("chatInput").value;
+            if (message.trim() !== "") {
+                let messageDiv = document.createElement("div");
+                messageDiv.textContent = "আপনি: " + message;
+                document.getElementById("messages").appendChild(messageDiv);
+                document.getElementById("chatInput").value = "";
+            }
+        });
+
+        // অভিযোগ ট্র্যাক ফর্ম
+        document.getElementById("trackForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let trackingID = document.getElementById("trackingID").value;
+            if (trackingID.trim() !== "") {
+                document.getElementById("trackingStatus").style.display = "block";
+                document.getElementById("status").textContent = "অভিযোগের প্রক্রিয়া চলছে।";
+            }
+        });
+    </script>
+</body>
+</html>
